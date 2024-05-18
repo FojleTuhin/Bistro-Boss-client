@@ -8,15 +8,21 @@ import {
 } from "react-router-dom";
 import Root from './Pages/Root';
 import Home from './Pages/Home';
+import { HelmetProvider } from 'react-helmet-async';
+import OurMenu from './Pages/OurMenu';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children:[
+    children: [
       {
-        path:"/",
-        element:<Home></Home>
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path:"/menu",
+        element:<OurMenu></OurMenu>
       }
     ]
   }
@@ -24,6 +30,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <HelmetProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </HelmetProvider>
   </React.StrictMode>,
 )

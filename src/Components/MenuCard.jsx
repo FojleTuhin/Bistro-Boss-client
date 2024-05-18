@@ -6,7 +6,7 @@ const MenuCard = ({item}) => {
 
             </div>
             <div>
-                <p className="mb-2">{item.name} ------------------</p>
+                <p className="mb-2 uppercase">{item.name} ------------------</p>
                 <p>{item.recipe}</p>
 
             </div>
