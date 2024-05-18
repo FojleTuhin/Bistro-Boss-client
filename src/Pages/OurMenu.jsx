@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import Cover from "../Components/Cover";
 import Title from "../Shared/Title";
 import MenuCard from "../Components/MenuCard";
+import img1 from "../assets/menu/banner3.jpg"
+import img2 from "../assets/menu/dessert-bg.jpeg"
+import img3 from "../assets/menu/pizza-bg.jpg"
+import img4 from "../assets/menu/salad-bg.jpg"
+import img5 from "../assets/menu/soup-bg.jpg"
+
 
 const OurMenu = () => {
 
@@ -16,7 +22,7 @@ const OurMenu = () => {
         <div className="">
             {/* offered menu  */}
             <div>
-                <Cover heading={"OUR MENU"} subheading={"Would you like to try a dish?."}></Cover>
+                <Cover heading={"OUR MENU"} subheading={"Would you like to try a dish?."} img={img1}></Cover>
                 <Title heading={"Don't miss"} subheading={"TODAY'S OFFER"}></Title>
                 <div className="grid grid-cols-2 gap-10 px-20">
                     {
@@ -32,7 +38,7 @@ const OurMenu = () => {
                     {/* dessert menu  */}
             <div>
                 <div className="mt-11 mb-11">
-                    <Cover heading={"DESSERTS"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}></Cover>
+                    <Cover heading={"DESSERTS"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} img={img2}></Cover>
                 </div>
                 <div className="grid grid-cols-2 gap-10 px-20">
                     {
@@ -49,7 +55,7 @@ const OurMenu = () => {
 
             <div>
                 <div className="mt-11 mb-11">
-                    <Cover heading={"PIZZA"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.."}></Cover>
+                    <Cover heading={"PIZZA"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.."} img={img3}></Cover>
                 </div>
                 <div className="grid grid-cols-2 gap-10 px-20">
                     {
@@ -66,7 +72,7 @@ const OurMenu = () => {
 
             <div>
                 <div className="mt-11 mb-11">
-                    <Cover heading={"SALADS"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.."}></Cover>
+                    <Cover heading={"SALADS"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.."} img={img4}></Cover>
                 </div>
                 <div className="grid grid-cols-2 gap-10 px-20">
                     {
@@ -85,7 +91,7 @@ const OurMenu = () => {
 
             <div>
                 <div className="mt-11 mb-11">
-                    <Cover heading={"SOUPS"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.."}></Cover>
+                    <Cover heading={"SOUPS"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.."} img={img5}></Cover>
                 </div>
                 <div className="grid grid-cols-2 gap-10 px-20">
                     {

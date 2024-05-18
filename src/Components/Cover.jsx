@@ -1,7 +1,6 @@
 import React from 'react';
-import img from "../assets/menu/banner3.jpg"
 
-const Cover = ({heading, subheading}) => {
+const Cover = ({heading, subheading, img}) => {
     return (
         <div>
             <div className="hero h-[500px]" style={{ backgroundImage: `URL(${img})` }}>
