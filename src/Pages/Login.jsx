@@ -1,63 +1,59 @@
-import { useEffect } from 'react';
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
-
-
-
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
+import img from "../assets/others/authentication.png"
+import img1 from "../assets/others/authentication1 (1).png"
 
 
 const Login = () => {
 
-    useEffect(()=>{
-        loadCaptchaEnginge(6); 
-    },[])
-
-    const handleLogin = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-    
-       
-    
-    }
 
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <div className="hero min-h-screen" style={{ backgroundImage: `url(${img})` }}>
+                <div className="flex w-[80%] shadow-2xl shadow-gray-500 py-8 px-24 gap-20">
+                    <div className="w-[50%] flex justify-center items-center">
+                        <img src={img1} alt="" />
                     </div>
-                    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleLogin} className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                    <div className="w-[50%]">
+                        <p className="text-2xl font-bold text-center">Login</p>
 
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <LoadCanvasTemplate />
-                                </label>
-                                <input type="text" name="captha" placeholder="Type the text above" className="input input-bordered" required />
+                        <form>
 
+                            <div className="w-full mb-4">
+                                <label >
+                                    <p className="text-[#444444] font-semibold mb-2">Email</p>
+                                    <input type="email" placeholder="Type here" className="p-3 w-full rounded-lg" />
+                                </label>
                             </div>
-                            <div className="form-control mt-6">
-                                <button type="submit">Login</button>
+                            <div className="w-full mb-4">
+                                <label >
+                                    <p className="text-[#444444] font-semibold mb-2">Password</p>
+                                    <input type="email" placeholder="Enter your password" className="p-3 w-full rounded-lg" />
+                                </label>
                             </div>
+                            <div className="w-full mb-4">
+                                <label >
+                                    <input type="email" placeholder="Type here" className="p-3 w-full rounded-lg" />
+                                </label>
+                            </div>
+                            <button type="submit" className=" w-full btn text-white bg-[#d1a054]">Sign In</button>
+
+                            <p className="font-medium mt-5 text-[#d1a054] text-center mb-3">New here? Create a New Account</p>
+                            <p className="font-medium  text-center mb-3">Or sign in with</p>
+                            <div className="flex justify-evenly">
+                                <FaFacebook />
+                                <FaGoogle />
+
+                                <FaGithub />
+                            </div>
+
+
                         </form>
+
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };
