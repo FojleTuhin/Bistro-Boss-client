@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import navImg from "../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png"
 
 const Navbar = () => {
 
@@ -6,9 +7,9 @@ const Navbar = () => {
 
         <li><Link to="/">Home</Link></li>
         <li><Link to="/contact">Contact Us</Link></li>
-        <li><Link to="dashboard/userHome">Dashboard</Link></li>
         <li><Link to="/menu">Our Menu</Link></li>
         <li><Link to="/shop">Our Shop</Link></li>
+        <li><Link to="dashboard/userHome">Dashboard</Link></li>
     </>
 
 

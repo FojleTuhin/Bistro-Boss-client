@@ -17,7 +17,7 @@ const Dashboard = () => {
                         <li className='mb-3 '><NavLink to='/dashboard/userHome' className={'flex gap-3  items-center font-bold '}> <FaHome />User Home</NavLink></li>
                         <li className='mb-3 '><NavLink className={'flex gap-3  items-center font-bold '}> <FaCalendarAlt />Reservation</NavLink></li>
                         <li className='mb-3 '><NavLink className={'flex gap-3  items-center font-bold '}> <FaWallet />Payment history</NavLink></li>
-                        <li className='mb-3 '><NavLink className={'flex gap-3  items-center font-bold '}> <FaShoppingCart />My cart</NavLink></li>
+                        <li className='mb-3 '><NavLink to='myCart' className={'flex gap-3  items-center font-bold '}> <FaShoppingCart />My cart</NavLink></li>
                         <li className='mb-3'><NavLink className={'flex gap-3  items-center font-bold '}> <MdGeneratingTokens />
                             Add review</NavLink></li>
                         <li className='mb-3'><NavLink className={'flex gap-3  items-center font-bold '}> <SlCalender />
