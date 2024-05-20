@@ -14,6 +14,8 @@ import Shop from './Pages/Shop';
 import Login from './Pages/Login';
 import Contact from './Pages/Contact';
 import SignUp from './Pages/SignUp';
+import Dashboard from './Pages/Dashboard';
+import UserHome from './Dashboard/UserHome';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,16 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element:<Contact></Contact>
+      }
+    ]
+  },
+  {
+    path:'dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:'userHome',
+        element:<UserHome></UserHome>
       }
     ]
   }
