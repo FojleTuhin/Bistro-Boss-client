@@ -13,6 +13,7 @@ import OurMenu from './Pages/OurMenu';
 import Shop from './Pages/Shop';
 import Login from './Pages/Login';
 import Contact from './Pages/Contact';
+import SignUp from './Pages/SignUp';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/signUp',
+        element:<SignUp></SignUp>
       },
       {
         path:'/contact',
