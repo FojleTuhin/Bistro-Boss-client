@@ -3,9 +3,13 @@ import img from "../assets/others/authentication.png"
 import img1 from "../assets/others/authentication1 (1).png"
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useContext } from "react";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 
 const SignUp = () => {
+
+    const {createUser} =useContext(AuthContext);
 
     const handleSignUp=(e)=>{
         e.preventDefault();
@@ -15,7 +19,8 @@ const SignUp = () => {
         const photo = e.target.photo.value;
         const password = e.target.password.value;
 
-
+        createUser(email, password)
+        .then(result=>console.log(result.user));
     }
 
 

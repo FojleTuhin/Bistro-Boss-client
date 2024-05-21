@@ -3,12 +3,14 @@ import img from "../assets/others/authentication.png"
 import img1 from "../assets/others/authentication1 (1).png"
 import { Link } from "react-router-dom";
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 
 const Login = () => {
 
     const [disabled, setDisabled] = useState(true);
+    const {signin}=useContext(AuthContext)
 
     const handleValidateCaptcha = (e) => {
         const user_captcha_value = e.target.value;
@@ -33,9 +35,9 @@ const Login = () => {
 
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
 
-        e.target.reset()
+        signin(email, password)
+        .then(result=>console.log(result.user));
     }
 
 
