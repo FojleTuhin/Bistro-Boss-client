@@ -17,6 +17,7 @@ import SignUp from './Pages/SignUp';
 import Dashboard from './Pages/Dashboard';
 import UserHome from './Dashboard/UserHome';
 import MyCart from './Dashboard/MyCart';
+import AuthProvider from './Firebase/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -28,38 +29,38 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path:"/menu",
-        element:<OurMenu></OurMenu>
+        path: "/menu",
+        element: <OurMenu></OurMenu>
       },
       {
-        path:"/shop",
-        element:<Shop></Shop>
+        path: "/shop",
+        element: <Shop></Shop>
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-        path:'/signUp',
-        element:<SignUp></SignUp>
+        path: '/signUp',
+        element: <SignUp></SignUp>
       },
       {
-        path:'/contact',
-        element:<Contact></Contact>
+        path: '/contact',
+        element: <Contact></Contact>
       }
     ]
   },
   {
-    path:'dashboard',
-    element:<Dashboard></Dashboard>,
-    children:[
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
       {
-        path:'userHome',
-        element:<UserHome></UserHome>
+        path: 'userHome',
+        element: <UserHome></UserHome>
       },
       {
-        path:'myCart',
-        element:<MyCart></MyCart>
+        path: 'myCart',
+        element: <MyCart></MyCart>
       }
     ]
   }
@@ -67,8 +68,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={router}></RouterProvider>
-    </HelmetProvider>
+    <AuthProvider>
+      <HelmetProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </HelmetProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )
