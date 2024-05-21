@@ -6,7 +6,24 @@ import { Helmet } from "react-helmet-async";
 
 
 const SignUp = () => {
+
+    const handleSignUp=(e)=>{
+        e.preventDefault();
+
+        const name= e.target.name.value;
+        const email = e.target.email.value;
+        const photo = e.target.photo.value;
+        const password = e.target.password.value;
+
+
+    }
+
+
+
+
+
     return (
+
         <div>
             <Helmet>
                 <title>
@@ -21,25 +38,33 @@ const SignUp = () => {
                     <div className="w-[50%]">
                         <p className="text-2xl font-bold text-center">Sign Up</p>
 
-                        <form>
+                        <form onSubmit={handleSignUp}>
+                            <div className="w-full mb-4">
+                                <label >
+                                    <p className="text-[#444444] font-semibold mb-2">Name</p>
+                                    <input type="text" name="name" placeholder="Type here" className="p-3 w-full rounded-lg" />
+                                </label>
+                            </div>
 
                             <div className="w-full mb-4">
                                 <label >
                                     <p className="text-[#444444] font-semibold mb-2">Email</p>
-                                    <input type="email" placeholder="Type here" className="p-3 w-full rounded-lg" />
+                                    <input type="email" name="email" placeholder="Type here" className="p-3 w-full rounded-lg" />
+                                </label>
+                            </div>
+                            <div className="w-full mb-4">
+                                <label >
+                                    <p className="text-[#444444] font-semibold mb-2">Photo</p>
+                                    <input type="text" name="photo" placeholder="Photo URL" className="p-3 w-full rounded-lg" />
                                 </label>
                             </div>
                             <div className="w-full mb-4">
                                 <label >
                                     <p className="text-[#444444] font-semibold mb-2">Password</p>
-                                    <input type="text" placeholder="Enter your password" className="p-3 w-full rounded-lg" />
+                                    <input type="text" name="password" placeholder="Enter your password" className="p-3 w-full rounded-lg" />
                                 </label>
                             </div>
-                            <div className="w-full mb-4">
-                                <label >
-                                    <input type="email" placeholder="Type here" className="p-3 w-full rounded-lg" />
-                                </label>
-                            </div>
+
                             <button type="submit" className=" w-full btn text-white bg-[#d1a054]">Sign Up</button>
 
                             <p className="font-medium mt-5 text-[#d1a054] text-center mb-3">Already registered? <Link to='/login'>Go to log in</Link></p>
@@ -47,7 +72,6 @@ const SignUp = () => {
                             <div className="flex justify-evenly">
                                 <FaFacebook />
                                 <FaGoogle />
-
                                 <FaGithub />
                             </div>
 
