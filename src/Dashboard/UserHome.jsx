@@ -2,10 +2,16 @@ import { FaPhoneVolume, FaStar, FaStore, FaWallet } from 'react-icons/fa6';
 import { IoWallet } from 'react-icons/io5';
 import userImage from "../assets/others/profile.png"
 import { FaCalendarAlt, FaShoppingCart } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const UserHome = () => {
     return (
         <div>
+            <Helmet>
+                <title>
+                    Dashboard || User Home
+                </title>
+            </Helmet>
             <p className='text-3xl font-semibold'>Hi, Welcome Back!</p>
             <div className='grid grid-cols-3 gap-6 mt-6 mb-8'>
                 <div className='grid grid-cols-5 py-9 gap-6 bg-gradient-to-r from-[#BB34F5] to-[#FCDBFF] text-white'>

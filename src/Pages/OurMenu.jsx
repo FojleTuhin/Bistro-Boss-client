@@ -7,6 +7,7 @@ import img2 from "../assets/menu/dessert-bg.jpeg"
 import img3 from "../assets/menu/pizza-bg.jpg"
 import img4 from "../assets/menu/salad-bg.jpg"
 import img5 from "../assets/menu/soup-bg.jpg"
+import { Helmet } from "react-helmet-async";
 
 
 const OurMenu = () => {
@@ -20,6 +21,11 @@ const OurMenu = () => {
     }, [])
     return (
         <div className="">
+            <Helmet>
+                <title>
+                    Bistro Boss || Menu
+                </title>
+            </Helmet>
             {/* offered menu  */}
             <div>
                 <Cover heading={"OUR MENU"} subheading={"Would you like to try a dish?."} img={img1}></Cover>
@@ -35,7 +41,7 @@ const OurMenu = () => {
                 </div>
             </div>
 
-                    {/* dessert menu  */}
+            {/* dessert menu  */}
             <div>
                 <div className="mt-11 mb-11">
                     <Cover heading={"DESSERTS"} subheading={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."} img={img2}></Cover>

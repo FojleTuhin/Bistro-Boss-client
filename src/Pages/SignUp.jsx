@@ -2,11 +2,17 @@ import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
 import img from "../assets/others/authentication.png"
 import img1 from "../assets/others/authentication1 (1).png"
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const SignUp = () => {
     return (
         <div>
+            <Helmet>
+                <title>
+                    Bistro Boss || SignUp
+                </title>
+            </Helmet>
             <div className="hero min-h-screen" style={{ backgroundImage: `url(${img})` }}>
                 <div className="flex flex-row-reverse w-[80%] shadow-2xl shadow-gray-500 py-8 px-24 gap-20">
                     <div className="w-[50%] flex justify-center items-center">

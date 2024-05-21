@@ -4,6 +4,7 @@ import img1 from "../assets/shop/banner2.jpg"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ShopCard from '../Components/ShopCard';
+import { Helmet } from 'react-helmet-async';
 
 const Shop = () => {
 
@@ -17,6 +18,11 @@ const Shop = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>
+                    Bistro Boss || Shop
+                </title>
+            </Helmet>
             <div className='mb-32'>
                 <Cover heading={"OUR SHOP"} subheading={"Would you like to try a dish?"} img={img1}></Cover>
             </div>

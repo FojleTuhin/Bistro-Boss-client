@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaCalendarAlt, FaHome, FaShoppingBag, FaShoppingCart } from 'react-icons/fa';
 import { FaWallet } from 'react-icons/fa6';
 import { IoMdMenu } from 'react-icons/io';
@@ -8,7 +7,8 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
-        <div className='flex'>
+        <div className='flex '>
+            
             <div className='w-[20%] bg-[#d1a054] min-h-screen py-12 pl-9'>
                 <p className='font-extrabold text-2xl'>BISTRO BOSS</p>
                 <p className='font-bold text-xl'>Restaurant</p>
@@ -42,7 +42,7 @@ const Dashboard = () => {
                 </div>
 
             </div>
-            <div className='py-12 px-9 w-full'>
+            <div className='py-12 px-9 w-full bg-[#F6F6F6]'>
                 <Outlet></Outlet>
             </div>
 

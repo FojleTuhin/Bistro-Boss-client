@@ -5,10 +5,16 @@ import img from "../assets/contact/banner.jpg"
 import { FaPhoneVolume } from "react-icons/fa6";
 import captha from "../assets/contact/Rectangle 76.png"
 import { BiMessageRoundedDots } from "react-icons/bi";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
     return (
         <div>
+            <Helmet>
+                <title>
+                    Bistro Boss || Contact
+                </title>
+            </Helmet>
             <Cover heading={"CONTACT US"} subheading={"Would you like to try a dish?"} img={img}></Cover>
             <Title heading={'Visit Us'} subheading={'OUR LOCATION'}></Title>
             <div className="w-[70%] mx-auto flex justify-between">
