@@ -1,23 +1,28 @@
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
 import img from "../assets/others/authentication.png"
 import img1 from "../assets/others/authentication1 (1).png"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
 
     const [disabled, setDisabled] = useState(true);
-    const {signin}=useContext(AuthContext)
+    const { signin } = useContext(AuthContext)
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
 
     const handleValidateCaptcha = (e) => {
         const user_captcha_value = e.target.value;
-        if(validateCaptcha(user_captcha_value)){
+        if (validateCaptcha(user_captcha_value)) {
             setDisabled(false)
         }
-        else{
+        else {
             setDisabled(true)
         }
     }
@@ -37,7 +42,22 @@ const Login = () => {
         const password = e.target.password.value;
 
         signin(email, password)
-        .then(result=>console.log(result.user));
+            .then(result => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Successfully login",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+                console.log(result.user);
+
+                navigate(location?.state ? location.state : '/')
+            });
+
+           
+            e.target.reset();
     }
 
 

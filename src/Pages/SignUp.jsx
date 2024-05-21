@@ -1,26 +1,43 @@
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
 import img from "../assets/others/authentication.png"
 import img1 from "../assets/others/authentication1 (1).png"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
 
-    const {createUser} =useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
 
-    const handleSignUp=(e)=>{
+    const navigate=useNavigate();
+
+    const handleSignUp = (e) => {
         e.preventDefault();
 
-        const name= e.target.name.value;
+        const name = e.target.name.value;
         const email = e.target.email.value;
         const photo = e.target.photo.value;
         const password = e.target.password.value;
 
         createUser(email, password)
-        .then(result=>console.log(result.user));
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Successfully Sign Up",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            });
+
+            navigate('/')
+
+
+            e.target.reset();
     }
 
 

@@ -18,6 +18,7 @@ import Dashboard from './Pages/Dashboard';
 import UserHome from './Dashboard/UserHome';
 import MyCart from './Dashboard/MyCart';
 import AuthProvider from './Firebase/AuthProvider';
+import PrivateRoutes from './Firebase/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/contact',
-        element: <Contact></Contact>
+        element: <PrivateRoutes><Contact></Contact></PrivateRoutes>
       }
     ]
   },

@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import navImg from "../assets/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png"
+import { useContext } from "react";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 const Navbar = () => {
+
+    const { user, logout } = useContext(AuthContext);
 
     const navLinks = <>
 
@@ -12,10 +16,16 @@ const Navbar = () => {
         <li><Link to="dashboard/userHome">Dashboard</Link></li>
     </>
 
-
+    const handleLogout = () => {
+        logout();
+    }
 
 
     return (
+
+
+
+
         <div>
             <div className="navbar bg-black bg-opacity-30 text-white fixed z-10">
                 <div className="navbar-start">
@@ -34,9 +44,19 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to='/login'><a className="mr-10 btn">Login</a></Link>
-                </div>
+                {
+                    user ?
+                        <div className="navbar-end">
+                            <Link><a onClick={handleLogout} className="mr-10 btn">Logout</a></Link>
+                        </div>
+                        :
+                        <div className="navbar-end">
+                            <Link to='/login'><a className="mr-10 btn">Login</a></Link>
+                        </div>
+
+
+
+                }
             </div>
         </div>
     );
