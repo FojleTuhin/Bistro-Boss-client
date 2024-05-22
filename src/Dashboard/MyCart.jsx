@@ -1,7 +1,12 @@
 import { FaTrashAlt } from 'react-icons/fa';
-import img from '../assets/menu/pizza-bg.jpg'
 import { Helmet } from 'react-helmet-async';
+import useCart from '../assets/Hooks/useCart';
 const MyCart = () => {
+
+
+    const [cart] = useCart();
+    console.log(cart);
+
     return (
         <div className="">
             <Helmet>
@@ -32,7 +37,9 @@ const MyCart = () => {
                                 <th>ACTION</th>
                             </tr>
                         </thead>
-                        <tbody>
+                       {
+                        cart.map(item=>
+                            <tbody key={item._id}>
                             {/* row 1 */}
                             <tr>
                                 <th>  1</th>
@@ -40,19 +47,21 @@ const MyCart = () => {
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={img} />
+                                                <img src={item.image} />
                                             </div>
                                         </div>
                                     </div>
                                 </td>
-                                <td>Zemlak, Daniel and Leannon </td>
-                                <td>Purple</td>
+                                <td>{item.name} </td>
+                                <td>{item.price}</td>
                                 <th>
                                     <button className="btn bg-[#B91C1C] p-3 border-none rounded-md"><FaTrashAlt className='text-white text-xl '/></button>
                                 </th>
                             </tr>
 
                         </tbody>
+                        )
+                       }
 
 
                     </table>

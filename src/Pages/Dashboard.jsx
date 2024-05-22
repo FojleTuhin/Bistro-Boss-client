@@ -4,11 +4,13 @@ import { IoMdMenu } from 'react-icons/io';
 import { MdEmail, MdGeneratingTokens } from 'react-icons/md';
 import { SlCalender } from 'react-icons/sl';
 import { NavLink, Outlet } from 'react-router-dom';
+import useCart from '../assets/Hooks/useCart';
 
 const Dashboard = () => {
+const [cart]= useCart();
     return (
         <div className='flex '>
-            
+
             <div className='w-[20%] bg-[#d1a054] min-h-screen py-12 pl-9'>
                 <p className='font-extrabold text-2xl'>BISTRO BOSS</p>
                 <p className='font-bold text-xl'>Restaurant</p>
@@ -17,7 +19,7 @@ const Dashboard = () => {
                         <li className='mb-3 '><NavLink to='/dashboard/userHome' className={'flex gap-3  items-center font-bold '}> <FaHome />User Home</NavLink></li>
                         <li className='mb-3 '><NavLink className={'flex gap-3  items-center font-bold '}> <FaCalendarAlt />Reservation</NavLink></li>
                         <li className='mb-3 '><NavLink className={'flex gap-3  items-center font-bold '}> <FaWallet />Payment history</NavLink></li>
-                        <li className='mb-3 '><NavLink to='myCart' className={'flex gap-3  items-center font-bold '}> <FaShoppingCart />My cart</NavLink></li>
+                        <li className='mb-3 '><NavLink to='myCart' className={'flex gap-3  items-center font-bold '}> <FaShoppingCart />My cart<span className='badge badge-secondary'>{cart.length}</span></NavLink></li>
                         <li className='mb-3'><NavLink className={'flex gap-3  items-center font-bold '}> <MdGeneratingTokens />
                             Add review</NavLink></li>
                         <li className='mb-3'><NavLink className={'flex gap-3  items-center font-bold '}> <SlCalender />
@@ -49,7 +51,7 @@ const Dashboard = () => {
 
 
 
-            
+
         </div>
     );
 };
