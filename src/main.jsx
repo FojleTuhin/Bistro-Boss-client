@@ -20,6 +20,7 @@ import MyCart from './Dashboard/MyCart';
 import AuthProvider from './Firebase/AuthProvider';
 import PrivateRoutes from './Firebase/PrivateRoutes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Payment from './Dashboard/Payment';
 
 const queryClient = new QueryClient()
 
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: 'myCart',
         element: <MyCart></MyCart>
+      },
+      {
+        path:'payment',
+        element:<Payment></Payment>
       }
     ]
   }

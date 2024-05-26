@@ -31,9 +31,9 @@ const [cart]= useCart();
 
                     <ul>
                         <li className='mb-3 '><NavLink to='/' className={'flex gap-3  items-center font-bold '}> <FaHome /> Home</NavLink></li>
-                        <li className='mb-3 '><NavLink className={'flex gap-3  items-center font-bold '}> <IoMdMenu />
+                        <li className='mb-3 '><NavLink to='/menu' className={'flex gap-3  items-center font-bold '}> <IoMdMenu />
                             Menu</NavLink></li>
-                        <li className='mb-3 '><NavLink className={'flex gap-3  items-center font-bold '}> <FaShoppingBag />Shop</NavLink></li>
+                        <li className='mb-3 '><NavLink to='/shop' className={'flex gap-3  items-center font-bold '}> <FaShoppingBag />Shop</NavLink></li>
                         <li className='mb-3 '><NavLink to='/contact' className={'flex gap-3  items-center font-bold '}> <MdEmail />Contact</NavLink></li>
 
 

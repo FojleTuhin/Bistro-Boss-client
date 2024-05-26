@@ -1,13 +1,21 @@
 import { FaTrashAlt } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
 import useCart from '../assets/Hooks/useCart';
+import { Link } from 'react-router-dom';
+
 const MyCart = () => {
 
 
     const [cart] = useCart();
-    console.log(cart);
+    const totalPrice = cart.reduce((total, item) => total + item.price, 0)
+
+
+
 
     return (
+
+
+
         <div className="">
             <Helmet>
                 <title>Dashboard || My Cart</title>
@@ -20,9 +28,9 @@ const MyCart = () => {
 
             <div className="bg-[#FFFFFF] w-[98%] mx-auto p-12">
                 <div className="flex justify-between items-center mb-4">
-                    <p className="text-2xl font-bold">Total orders: 6</p>
-                    <p className="text-2xl font-bold">Total price: $88.2</p>
-                    <button className="btn bg-[#D1A054] text-white font-bold">Pay</button>
+                    <p className="text-2xl font-bold">Total orders: {cart.length}</p>
+                    <p className="text-2xl font-bold">Total price: {totalPrice}</p>
+                    <Link to='/dashboard/payment'><button className="btn bg-[#D1A054] text-white font-bold">Pay</button></Link>
 
                 </div>
                 <div className="overflow-x-auto">
@@ -37,31 +45,31 @@ const MyCart = () => {
                                 <th>ACTION</th>
                             </tr>
                         </thead>
-                       {
-                        cart.map(item=>
-                            <tbody key={item._id}>
-                            {/* row 1 */}
-                            <tr>
-                                <th>  1</th>
-                                <td>
-                                    <div className="flex items-center gap-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={item.image} />
+                        {
+                            cart.map((item, index) =>
+                                <tbody key={item._id}>
+                                    {/* row 1 */}
+                                    <tr>
+                                        <th>{index + 1}</th>
+                                        <td>
+                                            <div className="flex items-center gap-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
+                                                        <img src={item.image} />
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>{item.name} </td>
-                                <td>{item.price}</td>
-                                <th>
-                                    <button className="btn bg-[#B91C1C] p-3 border-none rounded-md"><FaTrashAlt className='text-white text-xl '/></button>
-                                </th>
-                            </tr>
+                                        </td>
+                                        <td>{item.name} </td>
+                                        <td>{item.price}</td>
+                                        <th>
+                                            <button  className="btn bg-[#B91C1C] p-3 border-none rounded-md"><FaTrashAlt className='text-white text-xl ' /></button>
+                                        </th>
+                                    </tr>
 
-                        </tbody>
-                        )
-                       }
+                                </tbody>
+                            )
+                        }
 
 
                     </table>
