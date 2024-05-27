@@ -38,54 +38,54 @@ const CheckoutForm = () => {
 
 
     return (
-        // <form onSubmit={handleSubmit}>
-        //     <CardElement
-        //         options={{
-        //             style: {
-        //                 base: {
-        //                     fontSize: '16px',
-        //                     color: '#424770',
-        //                     '::placeholder': {
-        //                         color: '#aab7c4',
-        //                     },
-        //                 },
-        //                 invalid: {
-        //                     color: '#9e2146',
-        //                 },
-        //             },
-        //         }}
-        //     />
-        //     <button type="submit"disabled={!stripe}  className="btn bg-emerald-300">
-        //         Pay
-        //     </button>
-
-        //     <p>{error}</p>
-
-        // </form>
-
         <form onSubmit={handleSubmit}>
-            <CardElement options={{
-                style: {
-                    base: {
-                        fontSize: '16px',
-                        color: '#424770',
-                        '::placeholder': {
-                            color: '#aab7c4',
+            <CardElement
+                options={{
+                    style: {
+                        base: {
+                            fontSize: "16px",
+                            color: "#424770",
+                            "::placeholder": {
+                                color: "#aab7c4",
+                            },
+                        },
+                        invalid: {
+                            color: "#9e2146",
                         },
                     },
-                    invalid: {
-                        color: '#9e2146',
-                    },
-                },
-            }}>
-
-            </CardElement>
-            <button type="submit" disabled={!stripe} className="btn bg-green-100">
+                }}
+            />
+            <button type="submit"disabled={!stripe}  className="btn bg-emerald-300">
                 Pay
             </button>
 
             <p>{error}</p>
+
         </form>
+
+        // <form onSubmit={handleSubmit}>
+        //     <CardElement options={{
+        //         style: {
+        //             base: {
+        //                 fontSize: '16px',
+        //                 color: '#424770',
+        //                 '::placeholder': {
+        //                     color: '#aab7c4',
+        //                 },
+        //             },
+        //             invalid: {
+        //                 color: '#9e2146',
+        //             },
+        //         },
+        //     }}>
+
+        //     </CardElement>
+        //     <button type="submit" disabled={!stripe} className="btn bg-green-100">
+        //         Pay
+        //     </button>
+
+        //     <p>{error}</p>
+        // </form>
 
     );
 };
